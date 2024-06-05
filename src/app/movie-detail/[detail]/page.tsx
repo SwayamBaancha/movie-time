@@ -13,7 +13,7 @@ export default async function Page({ params }: { params: { detail: string } }) {
   const comment = await fetchCommentFromDb(params.detail);
   // console.log(movieDetail, 'empty');
   const similarMovies=await getSimilarMovies(params.detail)
-  console.log(similarMovies);
+  // console.log(similarMovies);
   
   return (
     <div>
@@ -38,8 +38,10 @@ export default async function Page({ params }: { params: { detail: string } }) {
           <p>{movieDetail?.overview}</p>
           <p className="text-xl mt-2 font-semibold">Genre</p>
           <div className="flex flex-row gap-2">
-          {movieDetail?.genres?.map((item:any)=>(
+          {movieDetail?.genres?.map((item:any, index:any)=>(
+            <div key={index}>
             <p className="bg-red-400 p-2 rounded-lg">{item.name}</p>
+            </div>
           ))}
           </div>
           <h5 className="text-xl mt-2 font-semibold">Runtime</h5>
