@@ -12,15 +12,16 @@ export default async function SearchTerm({
   const searchResult = await getSearchMovies(params.term);
 
   return (
-    <div className="w-1/2 mx-auto flex flex-col items-center justify-center">
+    <div className="md:w-1/2 mx-auto flex flex-col items-center justify-center">
       <h1 className="text-4xl text-center font-bold">Search Results</h1>
       {searchResult.length > 0 ? searchResult.map((item: any, index: number) => {
         return (
           <div
             key={index}
-            className="flex flex-row items-center justify-center gap-3 border-b-2 border-b-white"
+            className="md:flex md:flex-row md:items-center md:justify-center md:gap-3 my-4 md:my:0 "
           >
-            <Link href={`/movie-detail?movie_id=${item?.id}`} className="w-fit lg:min-w-[300px] h-56 object-cover object-center shadow-md shadow-gray-900 drop-shadow-xl rounded-sm my-4">
+            <div className="border-b-2 border-b-white">
+            <Link href={`/movie-detail?movie_id=${item?.id}`} className="w-fit min-w-[150px] lg:min-w-[300px] h-56 object-cover object-center shadow-md shadow-gray-900 drop-shadow-xl rounded-sm my-4">
               <Image
                 
                 src={getImagePath(
@@ -32,8 +33,9 @@ export default async function SearchTerm({
                 alt="movie-cards"
               />{" "}
             </Link>
+            </div>
             <div className="flex flex-col">
-              <p className="">{item?.title}</p>
+              <p className="mb-2 md:mb-0">{item?.title}</p>
               <p className="text-sm">{item?.overview}</p>
             </div>
           </div>

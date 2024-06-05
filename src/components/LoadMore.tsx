@@ -17,9 +17,9 @@ const LoadMore = () => {
     }, [inView, data])
     return (
         <>
-            <section className="grid grid-cols-4 gap-3">
+            {/* <section className="grid grid-cols-4 gap-3"> */}
                 {data}
-            </section>
+            {/* </section> */}
             <section className="flex justify-center items-center w-full">
                 <div ref={ref}>
                     <Image

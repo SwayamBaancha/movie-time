@@ -12,26 +12,26 @@ import { getImagePath } from "@/lib/getImagePath";
 import Autoplay from "embla-carousel-autoplay";
 import Link from "next/link";
 
-const Slider = ({ upcomingMovies }: any) => {
+const Slider = ({ upcomingMovies, className, isAutoplay }: any) => {
   return (
     <div>
       <Carousel
-        className="w-screen max-w-5xl"
+        className={`  ${className}`}
         plugins={[
           Autoplay({
             delay: 2000,
           }),
         ]}
       >
-        <CarouselContent>
-          {upcomingMovies.map((movie: any, index: number) => {
+        <CarouselContent className="bg-black"> 
+           {upcomingMovies.map((movie: any, index: number) => {
             return (
-              <CarouselItem key={index}>
-                <Link href={`/movie-detail?movie_id=${movie?.id}`}>
+              <CarouselItem key={index}> 
+                <Link href={`/movie-detail/${movie?.id}`}>
                   {/* <div className=""> */}
                   <Card className="relative">
-                    <CardContent className="flex aspect-video items-center justify-center p-0 pt-0 relative">
-                      <Image
+                    <CardContent className="flex items-center justify-center p-0 pt-0">
+                       <Image
                         src={getImagePath(
                           movie?.backdrop_path || movie?.poster_path,
                           true
@@ -40,18 +40,22 @@ const Slider = ({ upcomingMovies }: any) => {
                         width={1920}
                         alt="upcoming-movie-carousel"
                       />
-                    </CardContent>
-                    <CardFooter className="text-xl text-center flex items-center justify-center">
+                       {/* <img src={getImagePath(
+                          movie?.backdrop_path || movie?.poster_path,
+                          true
+                        )} />  */}
+                    </CardContent> 
+                    <CardFooter className="text-xl text-center flex items-center justify-center bg-black text-white">
                       <p>{movie.title}</p>
                     </CardFooter>
                   </Card>
                 </Link>
-              </CarouselItem>
+               </CarouselItem>
             );
           })}
-        </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
+         </CarouselContent>
+        <CarouselPrevious className="bg-black text-white"/>
+        <CarouselNext className="bg-black text-white" />
       </Carousel>
     </div>
   );

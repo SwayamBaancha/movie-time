@@ -1,9 +1,10 @@
 "use server";
 
 import MovieCard from "@/components/MovieCard";
+import { fetchCommentFromDb } from "./actions/comment.action";
 
 async function fetchDataFromTMDB(url: URL, cacheTime?: number) {
-  url.searchParams.set("page", "1");
+  // url.searchParams.set("page", "1");
   const options: RequestInit = {
     method: "GET",
     headers: {
@@ -17,6 +18,7 @@ async function fetchDataFromTMDB(url: URL, cacheTime?: number) {
   };
   // console.log(url); 
   const response = await fetch(url.toString(), options);
+  
   // console.log(url.toString());
 
   const data = await response.json();
@@ -37,12 +39,11 @@ export async function getPopularMovies(page: number) {
   const url = new URL(`https://api.themoviedb.org/3/movie/popular?page=${page}`);
   const result = await fetchDataFromTMDB(url);
   const data = result.results;
-
-  return data.map((item: any, index: any) => {
-    return (
-      <MovieCard key={index} data={item} index={index} />
-    );
-  })
+return data.map((item: any, index: number) => (
+  // console.log(item);
+  
+      <MovieCard id={item.id} data={item} index={index} />
+))
 }
 
 export async function searchMovies(id?: string, keywords?: string) {
@@ -60,14 +61,34 @@ export async function getSearchMovies(term: string) {
   return data.results;
 }
 
-export const fetchMovieDetail = async (id: string) => {
-  // console.log(id, 'id');
+export async function fetchMovieDetail(id: string) {
+  console.log(id, 'id');
 
   const url = new URL(
-    `https://api.themoviedb.org/3/movie/${id}?language=en-US`
+    `https://api.themoviedb.org/3/movie/${id}`
   );
+  const data = await fetchDataFromTMDB(url);
+  return data;
+};
+
+export const fetchComment = async (movie_id: string) => {
+
+  try {
+    const res = await fetchCommentFromDb(movie_id);
+    return res
+  } catch (error:any) {
+    throw new Error(`Failed to fetch user: ${error.message}`);
+  }
+};
+
+export async function getSimilarMovies(id:string) {
+  const url = new URL(
+    `https://api.themoviedb.org/3/movie/${id}/similar?language=en-US&page=1`
+  );
+  console.log(url);
+  
   const data = await fetchDataFromTMDB(url);
   // console.log(data);
 
-  return data;
-};
+  return data.results;
+}
