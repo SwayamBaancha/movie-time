@@ -20,10 +20,10 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body className={inter.className}>
-          <div className="bg-[#0F1117]">
-            <div className="dark">
+          <div className="bg-[#0F1117] min-h-screen">
+            {/* <div className="dark"> */}
             <Header />
-            </div>
+            {/* </div> */}
             <div className="max-w-7xl mx-auto text-white">
             {children}
             </div>
