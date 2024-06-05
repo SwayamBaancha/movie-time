@@ -62,7 +62,7 @@ export async function getSearchMovies(term: string) {
 }
 
 export async function fetchMovieDetail(id: string) {
-  console.log(id, 'id');
+  // console.log(id, 'id');
 
   const url = new URL(
     `https://api.themoviedb.org/3/movie/${id}`
@@ -85,7 +85,7 @@ export async function getSimilarMovies(id:string) {
   const url = new URL(
     `https://api.themoviedb.org/3/movie/${id}/similar?language=en-US&page=1`
   );
-  console.log(url);
+  // console.log(url);
   
   const data = await fetchDataFromTMDB(url);
   // console.log(data);

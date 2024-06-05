@@ -7,8 +7,8 @@ const variants = {
   hidden: { opacity: 0 },
   visible: { opacity: 1 },
 };
-const MovieCard = ({ key, data, index, id }: any) => {
-  // console.log("da", data);
+const MovieCard = ({ id, data, index }: any) => {
+  // console.log("da", id);
 
   return (
     <div key={id}>
