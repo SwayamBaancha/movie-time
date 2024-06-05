@@ -42,7 +42,7 @@ export async function getPopularMovies(page: number) {
 return data.map((item: any, index: number) => (
   // console.log(item);
   
-      <MovieCard key={item.id} data={item} index={index} />
+      <MovieCard key={item.id} id={item.id} data={item} index={index} />
 ))
 }
 
