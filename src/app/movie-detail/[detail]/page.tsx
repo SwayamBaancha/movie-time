@@ -10,10 +10,7 @@ import Slider from "@/components/Carousel";
 
 export default async function Page({ params }: { params: { detail: string } }) {
   const movieDetail = await fetchMovieDetail(params.detail);
-  const comment = await fetchCommentFromDb(params.detail);
-  // console.log(movieDetail, 'empty');
-  const similarMovies=await getSimilarMovies(params.detail)
-  // console.log(similarMovies);
+  // const comment = await fetchCommentFromDb(params.detail);
   
   return (
     <div>
@@ -82,7 +79,7 @@ export default async function Page({ params }: { params: { detail: string } }) {
             })}
           </div> */}
           <div className="flex items-center justify-between mt-4">
-              <CommentForm movie_id={params.detail} refresh={movieDetail} />
+              {/* <CommentForm movie_id={params.detail} refresh={movieDetail} /> */}
             <Button variant="ghost">
               <Link
                 href={movieDetail?.homepage || ""}
@@ -96,7 +93,7 @@ export default async function Page({ params }: { params: { detail: string } }) {
         </div>
       </div>
       
-      <div>
+      {/* <div>
         <h3 className="font-bold text-lg">Reviews</h3>
         {comment.length>1 ? comment.map((item: any, index: any) => {
           return (
@@ -110,7 +107,7 @@ export default async function Page({ params }: { params: { detail: string } }) {
             </div>
           );
         }) : <p className="text-white text-sm mt-4">No review yet. Be the first one to review</p>}
-      </div>
+      </div> */}
         {/* <Slider upcomingMovies={similarMovies} className="w-full max-w-xs" isAutoplay={false} /> */}
     </div>
   );
