@@ -1,0 +1,61 @@
+{
+  "pages": {
+    "/_not-found/page": [
+      "static/chunks/webpack-5e40397c9eb56dba.js",
+      "static/chunks/fd9d1056-f1cafe8a7e99851e.js",
+      "static/chunks/23-d6d3d5893a1dd7fa.js",
+      "static/chunks/main-app-000bda35d846e461.js",
+      "static/chunks/app/_not-found/page-bf8498413de3f7dd.js"
+    ],
+    "/layout": [
+      "static/chunks/webpack-5e40397c9eb56dba.js",
+      "static/chunks/fd9d1056-f1cafe8a7e99851e.js",
+      "static/chunks/23-d6d3d5893a1dd7fa.js",
+      "static/chunks/main-app-000bda35d846e461.js",
+      "static/css/cbe48e03fbc88406.css",
+      "static/chunks/231-65eacaf3824c6acc.js",
+      "static/chunks/637-c6c30c108cf1629e.js",
+      "static/chunks/600-4d92b546411bee75.js",
+      "static/chunks/66-f168780bc37cf971.js",
+      "static/chunks/app/layout-0099af83a3a4782c.js"
+    ],
+    "/anime/page": [
+      "static/chunks/webpack-5e40397c9eb56dba.js",
+      "static/chunks/fd9d1056-f1cafe8a7e99851e.js",
+      "static/chunks/23-d6d3d5893a1dd7fa.js",
+      "static/chunks/main-app-000bda35d846e461.js",
+      "static/chunks/app/anime/page-32da5fff72710f8e.js"
+    ],
+    "/search/[term]/page": [
+      "static/chunks/webpack-5e40397c9eb56dba.js",
+      "static/chunks/fd9d1056-f1cafe8a7e99851e.js",
+      "static/chunks/23-d6d3d5893a1dd7fa.js",
+      "static/chunks/main-app-000bda35d846e461.js",
+      "static/chunks/231-65eacaf3824c6acc.js",
+      "static/chunks/137-b4147ed08c4f5644.js",
+      "static/chunks/app/search/[term]/page-25585802eb674c76.js"
+    ],
+    "/page": [
+      "static/chunks/webpack-5e40397c9eb56dba.js",
+      "static/chunks/fd9d1056-f1cafe8a7e99851e.js",
+      "static/chunks/23-d6d3d5893a1dd7fa.js",
+      "static/chunks/main-app-000bda35d846e461.js",
+      "static/chunks/231-65eacaf3824c6acc.js",
+      "static/chunks/137-b4147ed08c4f5644.js",
+      "static/chunks/637-c6c30c108cf1629e.js",
+      "static/chunks/214-ea6ad6125090a8ad.js",
+      "static/chunks/app/page-8a9152b76860b4a8.js"
+    ],
+    "/movie-detail/[detail]/page": [
+      "static/chunks/webpack-5e40397c9eb56dba.js",
+      "static/chunks/fd9d1056-f1cafe8a7e99851e.js",
+      "static/chunks/23-d6d3d5893a1dd7fa.js",
+      "static/chunks/main-app-000bda35d846e461.js",
+      "static/chunks/231-65eacaf3824c6acc.js",
+      "static/chunks/137-b4147ed08c4f5644.js",
+      "static/chunks/637-c6c30c108cf1629e.js",
+      "static/chunks/600-4d92b546411bee75.js",
+      "static/chunks/app/movie-detail/[detail]/page-d624e55893ce16f2.js"
+    ]
+  }
+}
