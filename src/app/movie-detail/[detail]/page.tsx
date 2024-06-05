@@ -9,11 +9,17 @@ import { fetchCommentFromDb } from "@/lib/actions/comment.action";
 import Slider from "@/components/Carousel";
 
 export default async function Page({ params }: { params: { detail: string } }) {
-  const movieDetail = await fetchMovieDetail(params.detail);
-  const comment = await fetchCommentFromDb(params.detail);
-  // console.log(movieDetail, 'empty');
-  const similarMovies=await getSimilarMovies(params.detail)
-  // console.log(similarMovies);
+  // const movieDetail = await fetchMovieDetail(params.detail);
+  // const comment = await fetchCommentFromDb(params.detail);
+  // // console.log(movieDetail, 'empty');
+  // const similarMovies=await getSimilarMovies(params.detail)
+  // // console.log(similarMovies);
+
+  const [movieDetail, comment, similarMovies] = await Promise.all([
+    fetchMovieDetail(params.detail),
+    fetchCommentFromDb(params.detail),
+    getSimilarMovies(params.detail)
+  ]);
   
   return (
     <div>
