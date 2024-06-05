@@ -7,11 +7,11 @@ const variants = {
   hidden: { opacity: 0 },
   visible: { opacity: 1 },
 };
-const MovieCard = ({ key, data, index }: any) => {
-  // console.log("da", data);
+const MovieCard = ({ id, data, index }: any) => {
+  // console.log("da", id);
 
   return (
-    <div key={key}>
+    <div key={id}>
       <div className="relative">
         {data && (
           <MotionDiv
