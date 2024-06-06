@@ -21,7 +21,7 @@ export default async function SearchTerm({
             className="md:flex md:flex-row md:items-center md:justify-center md:gap-3 my-4 md:my:0 "
           >
             <div className="border-b-2 border-b-white">
-            <Link href={`/movie-detail?movie_id=${item?.id}`} className="w-fit min-w-[150px] lg:min-w-[300px] h-56 object-cover object-center shadow-md shadow-gray-900 drop-shadow-xl rounded-sm my-4">
+            <Link href={`/movie-detail/${item?.id}`} className="w-fit min-w-[150px] lg:min-w-[300px] h-56 object-cover object-center shadow-md shadow-gray-900 drop-shadow-xl rounded-sm my-4">
               <Image
                 
                 src={getImagePath(
