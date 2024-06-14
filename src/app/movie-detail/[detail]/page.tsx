@@ -63,7 +63,8 @@ export default async function Page({ params }: { params: { detail: string } }) {
               </div>
             ) : null}
             <div className="flex items-center justify-between mt-4">
-              <CommentForm movie_id={params.detail} refresh={movieDetail} />
+              {/* <CommentForm movie_id={params.detail} refresh={movieDetail} /> */}
+              <div></div>
               <Button variant="ghost">
                 <Link
                   href={movieDetail?.homepage || ""}
@@ -77,8 +78,8 @@ export default async function Page({ params }: { params: { detail: string } }) {
           </div>
         </div>
 
-        <div>
-          <h3 className="font-bold text-lg">Reviews</h3>
+        {/* <div>
+          <h3 className="font-bold text-lg">Reviews</h3> */}
           {/* {comment && comment.length > 0 ? (
             comment.map((item: any, index: any) => (
               <div
@@ -93,7 +94,7 @@ export default async function Page({ params }: { params: { detail: string } }) {
           ) : (
             <p className="text-white text-sm mt-4">No review yet. Be the first one to review</p>
           )} */}
-        </div>
+        {/* </div> */}
       </div>
     );
   } catch (error) {
