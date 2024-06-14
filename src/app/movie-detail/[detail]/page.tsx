@@ -10,7 +10,7 @@ import Slider from "@/components/Carousel";
 
 export default async function Page({ params }: { params: { detail: string } }) {
   const movieDetail = await fetchMovieDetail(params.detail);
-  const comment = await fetchCommentFromDb(params.detail);
+  // const comment = await fetchCommentFromDb(params.detail);
   
   return (
     <div>
@@ -93,7 +93,7 @@ export default async function Page({ params }: { params: { detail: string } }) {
         </div>
       </div>
       
-      <div>
+      {/* <div>
         <h3 className="font-bold text-lg">Reviews</h3>
         {comment.length>=1 ? comment.map((item: any, index: any) => {
           return (
@@ -107,7 +107,7 @@ export default async function Page({ params }: { params: { detail: string } }) {
             </div>
           );
         }) : <p className="text-white text-sm mt-4">No review yet. Be the first one to review</p>}
-      </div>
+      </div> */}
         {/* <Slider upcomingMovies={similarMovies} className="w-full max-w-xs" isAutoplay={false} /> */}
     </div>
   );
