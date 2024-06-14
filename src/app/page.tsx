@@ -5,7 +5,7 @@ import LoadMore from "@/components/LoadMore";
 export default async function Home() {
   const data = await getPopularMovies(1);
   const upcomingMovies = await getUpcomingMovies();
-  console.log(process.env.MONGODB_URL);
+  console.log('utl', process.env.MONGODB_URL);
   
   return (
     <main>
